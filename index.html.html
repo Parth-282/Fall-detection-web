@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fall Detection System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef1f5;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      max-width: 400px;
+      margin: auto;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .status {
+      font-size: 28px;
+      font-weight: bold;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .safe {
+      background-color: #e0fbe0;
+      color: #2b8f2b;
+    }
+
+    .fall {
+      background-color: #ffe0e0;
+      color: #d10000;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Fall Detection Bot Status</h1>
+    <div id="statusBox" class="status safe">
+      No Fall Detected
+    </div>
+  </div>
+
+  <footer>
+    Last updated: <span id="timestamp"></span><br />
+    Refresh page to update status
+  </footer>
+
+  <script>
+    // Optional future enhancement: fetch status from a remote file
+    // fetch('status.txt')
+    //   .then(res => res.text())
+    //   .then(text => {
+    //     const statusBox = document.getElementById('statusBox');
+    //     const status = text.trim();
+    //     statusBox.textContent = status;
+    //     if (status.toLowerCase().includes('fall')) {
+    //       statusBox.classList.remove('safe');
+    //       statusBox.classList.add('fall');
+    //     } else {
+    //       statusBox.classList.remove('fall');
+    //       statusBox.classList.add('safe');
+    //     }
+    //   });
+
+    // Set current timestamp
+    document.getElementById("timestamp").textContent = new Date().toLocaleString();
+  </script>
+</body>
+</html>
